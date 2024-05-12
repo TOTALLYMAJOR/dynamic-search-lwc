@@ -1,34 +1,32 @@
-1. Component Composition
+Dynamic Search Component for Salesforce LWC
 
-	•	Use Small, Reusable Components: Build your application with small, reusable components that do one thing well. This makes your application easier to maintain and enhances performance.
-	•	Encapsulation: Leverage the encapsulation features of web components to hide complex implementation details and expose a simple interface to other components.
+Description:
+This component will enable users to perform real-time searches on any Salesforce object (like Accounts, Contacts, or Custom Objects). It will update the search results dynamically as the user types their query, providing a quick and responsive user experience.
 
-2. Data and State Management
+Features:
 
-	•	Immutable Data Patterns: Treat data as immutable to simplify state management and reduce bugs. When data changes, create a new object instead of modifying the existing one.
-	•	Centralized State Management: For complex applications, consider using a centralized state management pattern or library to manage state more effectively across components.
+	Dynamic Search Input: As the user types, the component updates the search results.
+	
+	Debouncing: To minimize performance impact, the component will use debouncing to delay the search trigger until the user 	has stopped typing for a preset duration.
+	
+	Customizable Object and Fields: The component can be configured to search through any object and its fields.
+	
+	Error Handling: Robust error handling to manage API limits and other potential issues.
+	Accessible Design: Implement accessibility standards to ensure the component is usable for all users.
 
-3. Performance Optimization
+Code Specifications:
+	LWC Structure: Utilize standard LWC lifecycle hooks and modular design.
+	Apex Controller: Secure, efficient Apex methods to handle search queries, adhering to best practices like SOQL query 		optimizations and security enforcement.
+	Styling: Use Salesforce Lightning Design System (SLDS) for styling to ensure consistent look and feel with the Salesforce 	platform.
 
-	•	Efficient Data Fetching: Use the @wire service to fetch data efficiently and cache results when possible. Be mindful of the number of requests made to the server.
-	•	Lazy Loading: Use dynamic imports to lazy-load parts of your application that are not immediately needed, reducing the initial load time.
+Development Best Practices
+	Code Reusability: Design components and Apex classes to be reusable across different LWCs.
+	Security: Apply Salesforce security best practices, including checking user permissions and field-level security.
+	Testing: Include Jest tests for LWC and Apex tests to ensure code reliability and cover edge cases.
 
-4. Testing and Debugging
-
-	•	Comprehensive Testing: Implement a comprehensive testing strategy that includes unit tests, integration tests, and end-to-end tests. Salesforce provides tools for testing LWC.
-	•	Debugging: Use the browser’s developer tools and Salesforce’s debugging tools to troubleshoot and fix issues in your components.
-
-5. Security Best Practices
-
-	•	Locker Service Compliance: Ensure your components are Locker Service compliant to adhere to Salesforce’s security standards, protecting your application from common web vulnerabilities.
-	•	Use Secure Apex Methods: When calling Apex methods from LWC, ensure they are properly secured to prevent unauthorized access.
-
-6. Development Workflow and Tooling
-
-	•	Source Control: Use a version control system like Git to manage your source code, track changes, and collaborate with other developers.
-	•	Continuous Integration/Continuous Deployment (CI/CD): Implement CI/CD pipelines to automate testing and deployment of your LWC applications.
-
-7. Adherence to Salesforce Lightning Design System (SLDS)
-
-	•	Consistent UI: Use SLDS for styling to ensure your application matches the Salesforce Lightning look and feel, providing a consistent user experience.
-	•	Accessibility: Follow SLDS guidelines for accessibility to make your application usable for everyone, including people with disabilities.
+Files Structure
+	dynamicSearchLWC.html - The HTML template for the component.
+	dynamicSearchLWC.js - The JavaScript controller to handle UI logic and interactions.
+	dynamicSearchLWC.css - CSS file for component-specific styling.
+	dynamicSearchController.apex - Apex class for backend logic.
+	dynamicSearchControllerTest.apex - Test class for the Apex controller.
