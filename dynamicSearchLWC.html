@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="Dynamic Search" icon-name="custom:custom63">
+        <div class="slds-m-around_medium">
+            <lightning-input type="text" label="Search" onchange={handleSearchChange} placeholder="Enter search term..."></lightning-input>
+            <template if:true={results}>
+                <ul class="slds-list_vertical slds-list_vertical-space">
+                    <template for:each={results} for:item="result" for:index="index">
+                        <li key={result.id} class="slds-p-vertical_small">
+                            <lightning-formatted-url value={result.url} label={result.value} target="_blank"></lightning-formatted-url>
+                        </li>
+                    </template>
+                </ul>
+            </template>
+            <template if:true={error}>
+                <p class="slds-text-color_error">{error}</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>
