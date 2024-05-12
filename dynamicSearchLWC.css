@@ -1,0 +1,4 @@
+.slds-list_vertical-space > li {
+    border-bottom: 1px solid #e0e5ee;
+    padding: 0.75rem 0;
+}
