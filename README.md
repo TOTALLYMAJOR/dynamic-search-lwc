@@ -1,3 +1,4 @@
+![image](https://github.com/TOTALLYMAJOR/dynamic-search-lwc/assets/7169661/8cb89bfc-d5b4-4f3e-8d85-c5a6f5bf0eaa)
 Dynamic Search Component for Salesforce LWC
 
 Description:
